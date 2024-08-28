@@ -1,5 +1,5 @@
 [package]
-name = "ipfs_host"
+name = "ipfs-host"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,8 +11,8 @@ sha2 = { git = "https://github.com/risc0/RustCrypto-hashes", tag = "sha2/v0.10.6
 serde_cbor = "0.10"
 http = "0.2.0" 
 ipfs-api-backend-hyper = "0.6"
-ipfs_messages = { path = "./proto_messages" }
-ipfs_core = { path = "../ipfs_core" }
+ipfs-messages = { path = "./proto-messages" }
+ipfs-core = { path = "../ipfs-core" }
 futures = "0.3"
 hex = "0.4"
 tokio = { version = "1", features = ["full"] }

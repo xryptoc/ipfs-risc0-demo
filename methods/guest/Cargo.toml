@@ -1,5 +1,5 @@
 [package]
-name = "multiply"
+name = "ipfs-content-zk"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 risc0-zkvm = "1.0.5"
-ipfs_core = { path = "../../ipfs_core" }
+ipfs-core = { path = "../../ipfs-core" }

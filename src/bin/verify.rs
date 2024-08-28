@@ -1,4 +1,4 @@
-use hello_world_methods::MULTIPLY_ID;
+use ipfstest_methods::IPFS_CONTENT_ZK_ID;
 use risc0_zkvm::Receipt;
 
 fn main(){
@@ -10,7 +10,7 @@ fn main(){
     let receipt = bincode::deserialize::<Receipt>(&receipt_file).unwrap();
     
     // 验证生成的 receipt 是否未被篡改
-    let _verification = match receipt.verify(MULTIPLY_ID){
+    let _verification = match receipt.verify(IPFS_CONTENT_ZK_ID){
     Ok(()) => println!("Proof is Valid"),
     Err(_) => println!("Something went wrong !!"),
     };

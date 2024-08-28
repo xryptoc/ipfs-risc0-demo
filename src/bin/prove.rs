@@ -1,4 +1,4 @@
-use hello_world_methods::MULTIPLY_ELF;
+use ipfstest_methods::IPFS_CONTENT_ZK_ELF;
 use risc0_zkvm::{default_prover, ExecutorEnv, Receipt};
 
 use ipfs_core::{IpfsProof, ProofReceipt};
@@ -48,7 +48,7 @@ async fn main() {
     let prover = default_prover();
 
     // Produce a receipt by proving the specified ELF binary.
-    let receipt = prover.prove(env, MULTIPLY_ELF).unwrap().receipt;
+    let receipt = prover.prove(env, IPFS_CONTENT_ZK_ELF).unwrap().receipt;
 
     println!("Processing time: {} ms", start_time.elapsed().as_millis());
 

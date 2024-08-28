@@ -1,15 +1,15 @@
 [package]
-name = "hello-world"
+name = "ipfstest"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-hello-world-methods = { path = "methods" }
+ipfstest-methods = { path = "methods" }
 risc0-zkvm = "1.0.5"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-ipfs_host = { path = "./ipfs_host" }
+ipfs-host = { path = "./ipfs-host" }
 tokio = { version = "1", features = ["full"] }
-ipfs_core = { path = "./ipfs_core" }
+ipfs-core = { path = "./ipfs-core" }
 dotenv = "0.15.0"
 bincode = "1.3"
 
