@@ -1,8 +1,6 @@
 use std::collections::HashMap;
-//use sha2;
 use serde::{Deserialize, Serialize};
 pub mod ipfsmessages;
-//use risc0_zkvm::sha::rust_crypto::{Digest as _, Sha256} ;
 use sha2::{Sha256, Digest};
 pub const SHA256_PREFIX: [u8; 2] = [18, 32];
 #[derive(Serialize, Deserialize, Clone)]
