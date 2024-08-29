@@ -33,5 +33,3 @@ cargo run --bin prove <ipfs_cid> <start> <end>
 ```
 cargo run --bin verify
 ```
-
-hash(hash(hash(ipfs-block[n.......[subselection]......m], ipfs-blocks.... ), ipfs-blocks...)
