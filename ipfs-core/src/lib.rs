@@ -26,15 +26,11 @@ impl IpfsProof {
     // Return 0 is the hash, return 1 is the subselection of data
     pub fn calculate_proof(&self) -> ProofReceipt {
         
-        
         let res = self.calculate_proof_req(&self.proof, vec![], 0);
         ProofReceipt{hash: res.0, data: res.1}
     }
     
-
-
     fn calculate_proof_req(&self, proofs:&Vec<ProofType>, res_data:Vec<u8>, index:u64) -> (Vec<u8>, Vec<u8>, u64) {
-        
         let mut hasher = Sha256::new();
         let mut result_data = res_data;
         let mut new_index = index;
@@ -44,7 +40,6 @@ impl IpfsProof {
                     hasher.update(data);
                     if let Some((start, end)) = self.data_selector.get(&(new_index as u64)) {
                         result_data.extend(&data[start.clone() as usize..(*start + *end) as usize]);
-
                     }
                     new_index += 1;
                 },
@@ -53,7 +48,6 @@ impl IpfsProof {
                     hasher.update(result.0);
                     result_data = result.1;
                     new_index = result.2;
-                    
                 },
             }
         }

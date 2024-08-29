@@ -1,7 +1,5 @@
 use ipfstest_methods::IPFS_CONTENT_ZK_ELF;
-use risc0_zkvm::{default_prover, ExecutorEnv, Receipt};
-
-use ipfs_core::{IpfsProof, ProofReceipt};
+use risc0_zkvm::{default_prover, ExecutorEnv};
 
 use tokio::main;
 use std::env;

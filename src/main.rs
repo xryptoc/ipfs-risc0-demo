@@ -2,19 +2,18 @@ use ipfs_core::ProofReceipt;
 use ipfstest_methods::{IPFS_CONTENT_ZK_ELF, IPFS_CONTENT_ZK_ID};
 use axum::{
     extract::Json,
-    routing::{get, post},
-    response::IntoResponse,
+    routing::post,
     Router,
 };
 use hex;
 use std::time::Duration;
 use bonsai_sdk::alpha as bonsai_sdk;
-use ethers::abi::{Token, Tokenizable};
+use ethers::abi::Token;
 use ::bonsai_sdk::alpha::responses::SnarkReceipt;
 use serde::{Deserialize, Serialize};
 
 use risc0_zkvm::{
-    Receipt, serde::{to_vec, from_slice}, PAGE_SIZE, compute_image_id
+    Receipt, serde::{to_vec, from_slice}, compute_image_id
 };
 
 #[derive(Debug, Deserialize)]
@@ -104,7 +103,7 @@ fn run_bonsai(input_data: Vec<u32>) -> Result<(Receipt, SnarkReceipt, String), B
     // create the memoryImg, upload it and return the imageId
     let img_id = hex::encode(compute_image_id(IPFS_CONTENT_ZK_ELF)?);
         
-    let rrr = client.upload_img(&img_id, IPFS_CONTENT_ZK_ELF.to_vec())?;
+    let _rrr = client.upload_img(&img_id, IPFS_CONTENT_ZK_ELF.to_vec())?;
     
 
     println!("ImageID {} ", img_id);
