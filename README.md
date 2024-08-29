@@ -1,6 +1,6 @@
 ## demo
 
-install & run
+install & run - `Local`
 
 1. install risc0 toolchain
 
@@ -18,7 +18,9 @@ cargo risczero install
 
 3. upload file to ipfs by ipfs-ui ```http://127.0.0.1:8089```
 
-4. gen proof
+4. ```cp template.local.env .env```
+
+5. gen proof
 
 > proof receip will save to ```receip.bin```
 
@@ -26,7 +28,7 @@ cargo risczero install
 cargo run --bin prove <ipfs_cid> <start> <end>
 ```
 
-5. verify
+6. verify
 
 ```
 cargo run --bin verify

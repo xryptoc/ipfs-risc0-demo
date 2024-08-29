@@ -3,15 +3,27 @@ name = "ipfstest"
 version = "0.1.0"
 edition = "2021"
 
+default-run = "ipfstest"
+
 [dependencies]
 ipfstest-methods = { path = "methods" }
+hex = "0.4"
+tracing = "0.1"
+bs58 = "0.5.0"
+bytemuck = "1.7.2"
 risc0-zkvm = "1.0.5"
+risc0-groth16 = "1.0.5"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 ipfs-host = { path = "./ipfs-host" }
 tokio = { version = "1", features = ["full"] }
 ipfs-core = { path = "./ipfs-core" }
 dotenv = "0.15.0"
 bincode = "1.3"
+serde = { version = "1.0.209", features = ["derive"] }
+serde_json = "1.0.127"
+axum = "0.7.5"
+ethers = {version = "2.0.10"}
+bonsai-sdk = "0.7.0"
 
 [features]
 cuda = ["risc0-zkvm/cuda"]

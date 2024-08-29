@@ -13,7 +13,6 @@
 // limitations under the License.
 
 #![no_main]
-#![no_std]
 
 use ipfs_core::IpfsProof;
 use risc0_zkvm::guest::env;
@@ -23,9 +22,15 @@ risc0_zkvm::guest::entry!(main);
 fn main() {
     let ipfs_proof_request: IpfsProof = env::read();
 
+    println!("Finished in {} cycles", env::cycle_count());
+
+    println!("Current in {} cwycles", env::cycle_count());
+
     let res = ipfs_proof_request.calculate_proof();
 
     // // Commit to the journal the verifying key and message that was signed.
     env::commit(&res.hash);
     env::commit(&res.data);
+
+    println!("Finished in {} cycles", env::cycle_count());
 }
